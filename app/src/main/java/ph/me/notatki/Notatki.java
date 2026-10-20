@@ -9,18 +9,15 @@ public class Notatki {
     @SerializedName("tresc")
     public String tresc;
     @SerializedName("data")
-    public Calendar kalendarz = Calendar.getInstance();
+    public String kalendarz;
 
-    public Notatki(int rok, int miesiac, int dzien) {
-        kalendarz.set(Calendar.YEAR,rok);
-        kalendarz.set(Calendar.MONTH,miesiac);
-        kalendarz.set(Calendar.DAY_OF_MONTH,dzien);
-    }
-
-    public Notatki(String tytul, String tresc, Calendar kalendarz) {
+    public Notatki(String tytul, String tresc, String kalendarz) {
         this.tytul = tytul;
         this.tresc = tresc;
         this.kalendarz = kalendarz;
+    }
+
+    public Notatki() {
     }
 
     public String getTytul() {
@@ -39,12 +36,9 @@ public class Notatki {
         this.tresc = tresc;
     }
 
-    public Calendar getKalendarz() {
-        return kalendarz;
-    }
-
-    public void setKalendarz(Calendar kalendarz) {
-        this.kalendarz = kalendarz;
+    @Override
+    public String toString() {
+        return "Tytuł notatki: " + tytul + " Tresc: " +  tresc + " Data: " +  kalendarz;
     }
 }
 

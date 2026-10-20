@@ -6,6 +6,6 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface JsonPlaceHolderApi {
-    @GET
+    @GET("Karol3ke36/JSon-notatki/main/db.json")
     public Call<ArrayList<Notatki>> getNotatki();
 }
